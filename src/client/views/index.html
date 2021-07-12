@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Travel App</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Travel App</h1>
+        </header>
+
+        <main>
+
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+
+                    <p>Destination: </p>
+                    <input id="destination" name="test-dest" placeholder="Type zipcode or city" type="text" required>
+
+                    <p>Start Date: </p>
+                    <input id="startDate" placeholder="dd/mm/yyyy" type="date">
+
+                    <p>End Date: </p>
+                    <input id="endDate" placeholder="dd/mm/yyyy" type="date">
+
+                    <br>
+					<br>
+                    
+					<!--
+                    <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+					-->
+					
+					<button type="submit" class="submit-btn">Submit</button>
+                    <button type="reset">Remove</button>
+
+                    <br>
+                    <br>
+
+                </form>
+            <section>
+
+        	<section class="dest-results">
+                
+                <strong>Form Results:</strong>
+                <ul>
+                    <h4>Length Of Trip: </h4>
+                    <p id="lengthOfTrip"></p>
+                    <h4>Latitude:</h4>
+                    <p id="lat"></p>
+                    <h4>Longitude: </h4>
+                    <p id="lng"></p>
+                    <h4>Country Code:</h4>
+                    <p id="countryCode"></p>				
+                    <h4>Place: </h4>
+                    <p id="placeName"></p>	
+                    <h4>Temperature:</h4>
+                    <p id="temp"></p>
+                    <h4>Image:</h4>
+                    <p id="image"></p>
+                </ul>
+
+            </section>
+		
+        <script>
+
+        	if ('serviceWorker' in navigator) {
+        		window.addEventListener('load', () => {
+        			navigator.serviceWorker.register('/service-worker.js').then(registration =>{
+        				console.log('SW registered successfuly: ', registration);
+                    });
+                });
+        	}else{
+        		console.log("Service Working not supported");
+            }
+
+        </script>
+
+    </body>
+    
+</html>
+
